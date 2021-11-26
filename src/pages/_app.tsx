@@ -1,7 +1,3 @@
-import "tailwindcss/tailwind.css";
+import AppContainer from "../screens/AppContainer";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
-
-export default MyApp;
+export default AppContainer;
