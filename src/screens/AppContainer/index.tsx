@@ -2,6 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 import "tailwindcss/tailwind.css";
+import Footer from "./components/Footer";
 import Fullscreen from "./components/Fullscreen";
 
 const AppContainer = ({ Component, pageProps }) => {
@@ -13,6 +14,8 @@ const AppContainer = ({ Component, pageProps }) => {
       </Head>
 
       <Component {...pageProps} />
+
+      <Footer />
     </Fullscreen>
   );
 };
