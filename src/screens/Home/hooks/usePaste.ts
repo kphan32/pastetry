@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const usePaste = () => {
-  const [pasteContent, setPaste] = useState<string>();
+  const [pasteContent, setPasteContent] = useState<string>();
 
   // Some TS issues with the paste event.
   useEffect(() => {
     const pasteHandler = (event: React.ClipboardEvent) => {
-      setPaste(event.clipboardData.getData("text"));
+      setPasteContent(event.clipboardData.getData("text"));
     };
 
     // @ts-ignore
@@ -18,8 +18,13 @@ const usePaste = () => {
     };
   }, []);
 
+  const triggerPaste = async () => {
+    setPasteContent(await navigator.clipboard.readText());
+  };
+
   return {
     pasteContent,
+    triggerPaste,
   };
 };
 
