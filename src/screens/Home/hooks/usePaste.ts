@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const usePaste = () => {
-  const [paste, setPaste] = useState<string>();
+  const [pasteContent, setPaste] = useState<string>();
 
   // Some TS issues with the paste event.
   useEffect(() => {
@@ -19,7 +19,7 @@ const usePaste = () => {
   }, []);
 
   return {
-    paste,
+    pasteContent,
   };
 };
 

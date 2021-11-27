@@ -1,32 +1,15 @@
-import axios from "axios";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import Centered from "./components/Centered";
 import Greeting from "./components/Greeting";
 import usePaste from "./hooks/usePaste";
+import usePostPaste from "./hooks/usePostPaste";
 
 const Home = () => {
-  const { paste: pasteContent } = usePaste();
+  const { pasteContent } = usePaste();
 
-  // TODO move to separate function
-  // When paste state changes, post to paste API.
-  useEffect(() => {
-    if (!!pasteContent) {
-      axios({
-        method: "POST",
-        url: "/api/paste",
-        data: {
-          content: pasteContent,
-        },
-      })
-        .then((res) => {
-          window.location.href = res.data.redirect;
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-  }, [pasteContent]);
+  // Forward paste content to the API hook.
+  usePostPaste(pasteContent);
 
   return (
     <Centered>
