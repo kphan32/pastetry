@@ -1,23 +1,8 @@
-interface ContainerProps {
-  children: React.ReactNode;
-}
-const Centered: React.FC<ContainerProps> = ({ children }) => {
-  return (
-    <main className="flex flex-col items-center justify-center w-full flex-1 px-24 text-center">
-      {children}
-    </main>
-  );
-};
+import React, { useEffect, useRef } from "react";
 
-const Greeting = () => {
-  return (
-    <div>
-      <h1 className="text-6xl font-bold">
-        Welcome to <p className="text-blue-600">Pastetry</p>
-      </h1>
-    </div>
-  );
-};
+import Centered from "./components/Centered";
+import Greeting from "./components/Greeting";
+import HiddenInput from "./components/HiddenInput";
 
 const Home = () => {
   return (
@@ -30,6 +15,8 @@ const Home = () => {
           CTRL + V
         </code>
       </p>
+
+      <HiddenInput />
     </Centered>
   );
 };
