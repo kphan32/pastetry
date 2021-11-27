@@ -6,10 +6,16 @@ interface Props {
 }
 
 const ViewPaste: React.FC<Props> = ({ pasteContent }) => {
+  console.info(pasteContent);
   return (
-    <main className="flex-1 w-full">
-      <div className="m-2 p-2 bg-gray-200 rounded-md">
-        <code>{pasteContent}</code>
+    <main className="flex flex-1 w-full">
+      <div className="m-2 p-2 flex-1 bg-gray-200 rounded-md shadow-inner">
+        <code className="whitespace-pre-line h-full">
+          <textarea
+            value={pasteContent}
+            className="w-full h-full bg-gray-200 resize-none"
+          ></textarea>
+        </code>
       </div>
     </main>
   );
