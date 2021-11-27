@@ -8,7 +8,7 @@ Environment variables should be declared in the `.env` file (will be ignored by 
 
 | Key            | Description                             | Recommended Value                                            |
 | -------------- | --------------------------------------- | ------------------------------------------------------------ |
-| `DATABASE_URL` | URL to Postgres database used by Prisma | `"postgresql://root:root@localhost:5432/mydb?schema=public"` |
+| `DATABASE_URL` | URL of Postgres database used by Prisma | `"postgresql://root:root@localhost:5432/mydb?schema=public"` |
 
 ## Development
 
