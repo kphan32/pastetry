@@ -2,6 +2,8 @@ import React from "react";
 
 import Centered from "./components/Centered";
 import Greeting from "./components/Greeting";
+import Instructions from "./components/Instructions";
+
 import usePaste from "./hooks/usePaste";
 import usePostPaste from "./hooks/usePostPaste";
 
@@ -14,13 +16,7 @@ const Home = () => {
   return (
     <Centered>
       <Greeting />
-
-      <p className="mt-8 text-2xl">
-        Create a paste by hitting{" "}
-        <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-          CTRL + V
-        </code>
-      </p>
+      <Instructions />
     </Centered>
   );
 };
