@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../db";
 import { nanoid } from "nanoid";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -18,7 +18,7 @@ const pastePost = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const pasteNanoId = nanoid();
 
-    await new PrismaClient().paste.create({
+    await prisma.paste.create({
       data: {
         content: req.body.content,
         nanoId: pasteNanoId,
