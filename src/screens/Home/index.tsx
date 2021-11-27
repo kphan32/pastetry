@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from "react";
 
 import Centered from "./components/Centered";
 import Greeting from "./components/Greeting";
-import HiddenInput from "./components/HiddenInput";
+import usePaste from "./hooks/usePaste";
 
 const Home = () => {
+  usePaste();
+
   return (
     <Centered>
       <Greeting />
@@ -15,8 +17,6 @@ const Home = () => {
           CTRL + V
         </code>
       </p>
-
-      <HiddenInput />
     </Centered>
   );
 };
