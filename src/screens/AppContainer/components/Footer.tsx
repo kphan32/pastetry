@@ -3,7 +3,7 @@ const Author = () => {
     <p className="text-xs pr-2 md:text-md lg:text-lg">
       Made by{" "}
       <a
-        href="https://github.com/kphan32"
+        href="https://github.com/kphan32/pastetry"
         className="text-blue-500 hover:underline"
       >
         Kavin Phan
