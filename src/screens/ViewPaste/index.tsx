@@ -6,7 +6,6 @@ interface Props {
 }
 
 const ViewPaste: React.FC<Props> = ({ pasteContent }) => {
-  console.info(pasteContent);
   return (
     <main className="flex flex-1 w-full">
       <div className="m-2 p-2 flex-1 bg-gray-100 rounded-md shadow-inner">
