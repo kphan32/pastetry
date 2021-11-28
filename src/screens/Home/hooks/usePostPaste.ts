@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // When pasteContent changes and is truthy, post to paste API.
 const usePostPaste = (pasteContent?: string) => {
+  const [error, setError] = useState<string>(null);
+
   useEffect(() => {
     if (!!pasteContent) {
       axios({
@@ -17,11 +19,19 @@ const usePostPaste = (pasteContent?: string) => {
           window.location.href = res.data.redirect;
         })
         .catch((err) => {
-          // TODO handle this error
-          console.error(err);
+          setError(`Error creating paste: ${err.response.data}`);
         });
     }
   }, [pasteContent]);
+
+  const clearError = () => {
+    setError(null);
+  };
+
+  return {
+    error,
+    clearError,
+  };
 };
 
 export default usePostPaste;

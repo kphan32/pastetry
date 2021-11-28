@@ -15,6 +15,8 @@ const pasteAPI = async (req: NextApiRequest, res: NextApiResponse) => {
 };
 
 const pastePost = async (req: NextApiRequest, res: NextApiResponse) => {
+  // TODO investigate security risks and rate limiting
+
   try {
     const pasteNanoId = nanoid();
 
@@ -27,7 +29,7 @@ const pastePost = async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({ redirect: `/${pasteNanoId}` });
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send("Failed to persist to database!");
   }
 };
 
