@@ -1,8 +1,8 @@
-interface Props {
+interface PasteButtonProps {
   onClick: () => void;
 }
 
-const PasteButton: React.FC<Props> = ({ onClick }) => {
+const PasteButton: React.FC<PasteButtonProps> = ({ onClick }) => {
   return (
     <div>
       <button
