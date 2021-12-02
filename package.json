@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "yarn docker && next dev",
+    "dev": "yarn docker && yarn db && next dev",
     "build": "next build",
     "start": "next start",
     "docker": "docker-compose up -d",
+    "db": "prisma db push",
     "lint": "next lint"
   },
   "dependencies": {
