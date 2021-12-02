@@ -8,11 +8,11 @@ interface Props {
 const ViewPaste: React.FC<Props> = ({ pasteContent }) => {
   return (
     <main className="flex flex-1 w-full">
-      <div className="m-2 p-2 flex-1 bg-gray-100 rounded-md shadow-inner">
+      <div className="m-2 p-2 flex-1 bg-gray-200 rounded-md shadow-inner">
         <code className="whitespace-pre-line h-full">
           <textarea
             value={pasteContent}
-            className="w-full h-full bg-gray-100 outline-none resize-none"
+            className="w-full h-full bg-gray-200 outline-none resize-none"
             readOnly
           ></textarea>
         </code>
