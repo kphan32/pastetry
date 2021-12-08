@@ -25,6 +25,8 @@ const Home = () => {
   useEffect(() => {
     addError(error);
     clearError();
+    // setState functions are stable.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   return (

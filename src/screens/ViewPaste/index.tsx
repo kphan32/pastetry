@@ -1,5 +1,5 @@
 import prisma from "../../db";
-import { GetServerSidePropsContext, NextPageContext } from "next";
+import { GetServerSidePropsContext } from "next";
 
 interface Props {
   pasteContent: string;
