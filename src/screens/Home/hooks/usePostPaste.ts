@@ -1,8 +1,10 @@
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 // When pasteContent changes and is truthy, post to paste API.
 const usePostPaste = (pasteContent?: string) => {
+  const router = useRouter();
   const [error, setError] = useState<string>(null);
 
   useEffect(() => {
@@ -15,8 +17,7 @@ const usePostPaste = (pasteContent?: string) => {
         },
       })
         .then((res) => {
-          // TODO is this the best way to redirect?
-          window.location.href = res.data.redirect;
+          router.push(res.data.redirect);
         })
         .catch((err) => {
           setError(`Error creating paste: ${err.response.data}`);
