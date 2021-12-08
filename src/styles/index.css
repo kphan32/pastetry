@@ -1,0 +1,8 @@
+h1,
+p,
+a,
+textarea,
+img,
+svg {
+  @apply text-gray-900 fill-current;
+}
