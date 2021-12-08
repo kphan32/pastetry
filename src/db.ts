@@ -1,12 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client";
-
-declare global {
-  namespace NodeJS {
-    interface Global {
-      prisma: PrismaClient;
-    }
-  }
-}
+import { PrismaClient } from "@prisma/client";
 
 let prisma: PrismaClient;
 
