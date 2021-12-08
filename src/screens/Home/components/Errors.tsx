@@ -6,9 +6,9 @@ const Errors: React.FC<ErrorsProps> = ({ errors }) => {
   // TODO style
   return (
     <div className="absolute left-0 top-0">
-      {errors.map((error) => {
+      {errors.map((error, i) => {
         return (
-          <div>
+          <div key={i}>
             <p>{error}</p>
           </div>
         );
